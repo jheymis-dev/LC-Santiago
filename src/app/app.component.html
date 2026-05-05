@@ -1,0 +1,4018 @@
+<header class="absolute top-0 left-0 w-full z-50 p-4 font-secundaria text-white">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+
+    <!-- LOGO -->
+    <img src="../assets/images/logo-LC.png" class="w-14">
+
+    <!-- MENU -->
+    <nav class="hidden md:flex space-x-6 text-base font-medium">
+      <a href="#cordilheira" class="hover:text-cyan-300">Cordilheira</a>
+      <a href="#sunset" class="hover:text-cyan-300">Sunset</a>
+      <a href="#litoral" class="hover:text-cyan-300">Litoral</a>
+      <a href="#vinicolas" class="hover:text-cyan-300">Vinícolas</a>
+      <a href="#cidade" class="hover:text-cyan-300">Cidade</a>
+    </nav>
+
+    <!-- MOBILE -->
+    <button (click)="toggleMenu()" class="md:hidden">
+      <svg class="w-6 h-6 sombra" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- MENU MOBILE -->
+  <div *ngIf="showMenu" @slideDownUp class="mt-4 bg-fundo-invert backdrop-blur rounded-xl p-4 md:hidden">
+    <nav class="flex flex-col space-y-3 text-sm">
+      <a (click)="scrollToSection('cordilheira')" class="hover:text-cyan-300 cursor-pointer">Cordilheira</a>
+      <a (click)="scrollToSection('sunset')" class="hover:text-cyan-300 cursor-pointer">Sunset</a>
+      <a (click)="scrollToSection('litoral')" class="hover:text-cyan-300 cursor-pointer">Litoral</a>
+      <a (click)="scrollToSection('vinicolas')" class="hover:text-cyan-300 cursor-pointer">Vinícolas</a>
+      <a (click)="scrollToSection('cidade')" class="hover:text-cyan-300 cursor-pointer">Cidade</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="relative w-full h-[70vh] md:h-[85vh] lg:h-screen overflow-hidden">
+
+  <!-- IMAGEM -->
+  <picture class="absolute inset-0 w-full h-full overflow-hidden">
+    <!-- MOBILE -->
+    <source media="(max-width: 767px)" srcset="../assets/images/santiago-01.png">
+  
+    <!-- IMAGEM -->
+    <img src="../assets/images/santiago.png" loading="eager" class="w-full h-full object-cover 
+             object-[center_70%] 
+             md:object-[center_60%] 
+             lg:object-[center_10%]" />
+  </picture>
+
+  <!-- OVERLAY -->
+  <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="relative z-10 h-full flex flex-col justify-center max-w-7xl mx-auto px-4 text-white sombra overflow-hidden">
+
+    <h1 class="text-4xl md:text-6xl font-bold mb-4 mt-10 leading-tight">
+      Explore o Chile <br />
+      <span class="font-light">de um jeito inesquecível</span>
+    </h1>
+
+    <p class="max-w-xl text-sm md:text-base mb-10 md:mb-20 font-secundaria">
+      Experiências únicas entre montanhas, vinícolas, praias e cidades incríveis.
+    </p>
+
+    <!-- CARD (AGORA FAZ PARTE DO CONTEÚDO NO MOBILE) -->
+    <div class="
+      w-full max-w-md mx-auto
+
+      md:absolute md:right-8 md:bottom-12 md:mx-0">
+
+      <div class="bg-image backdrop-blur rounded-2xl p-4 shadow text-gray-100 font-secundaria font-medium zoom-effect">
+
+        <h2 class="text-lg mb-2 text-center md:text-left">
+          Por que nos escolher?
+        </h2>
+
+        <div class="grid grid-cols-3 gap-2 text-center text-sm">
+
+          <div>
+            <span class="flex text-lg justify-center items-center count" data-target="8">
+              <img src="../assets/images/distintivo-01.png" class="w-5 ml-1">
+            </span>
+            <p>Anos de Experiência</p>
+          </div>
+
+          <div>
+            <span class="flex text-lg justify-center items-center count" data-target="60000">
+              <img src="../assets/images/mais.png" class="w-[14px] ml-1">
+            </span>
+            <p>Clientes Satisfeitos</p>
+          </div>
+
+          <div>
+            <span class="flex text-lg justify-center items-center count" data-target="4.9">
+              <img src="../assets/images/estrela.png" class="w-4 ml-1">
+            </span>
+            <p class>Nossa Avaliação</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- COMO FUNCIONA - PASSEIOS -->
+<section id="agendamento" class="pb-10 pt-12 overflow-hidden bg-fundo">
+  <div class="max-w-7xl mx-auto px-4 ">
+  
+    <h2 class="section-title mb-4 font-secundaria fade-section text-white">
+      Como funcionam os <span class="text-amber-500">Passeios</span>
+    </h2>
+  
+    <div class="grid md:grid-cols-3 gap-4 text-sm font-secundaria text-white fade-section">
+  
+      <!-- Etapa 1 -->
+      <div class="bg-image rounded-shadow text-center rounded-2xl zoom-effect border">
+        <div class="p-6">
+          <div class="flex justify-center mb-3">
+            <img src="../assets/images/calendario.png" class="w-12" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-bold mb-2 text-base">Escolha a data da sua viagem</h3>
+            <p>Nos informe o período da sua viagem para indicarmos os melhores passeios conforme o clima e a temporada.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Etapa 2 -->
+      <div class="bg-image rounded-shadow text-center rounded-2xl zoom-effect border">
+        <div class="p-6">
+          <div class="flex justify-center mb-3">
+            <img src="../assets/images/aperto-de-mao.png" class="w-12" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-bold mb-2 text-base">Montamos seu roteiro ideal</h3>
+            <p>De acordo com seu perfil, indicamos os melhores passeios, combinando neve, vinícolas ou city tour.</p>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Etapa 3 -->
+      <div class="bg-image rounded-shadow text-center rounded-2xl zoom-effect border">
+        <div class="p-6">
+          <div class="flex justify-center mb-3">
+            <img src="../assets/images/feliz.png" class="w-12" loading="lazy">
+          </div>
+          <div>
+            <h3 class="font-bold mb-2 text-base">Aproveite sua experiência</h3>
+            <p>Cuidamos de tudo para você curtir cada momento com conforto, segurança e experiências inesquecíveis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- TEMPORADAS -->
+    <div class="grid md:grid-cols-2 gap-6 mt-6 font-secundaria text-white fade-section">
+      
+      <!-- ALTA TEMPORADA -->
+      <div class="relative rounded-2xl overflow-hidden p-6 bg-fundo-inverno border zoom-effect">
+        <!-- <img src="../assets/images/farellones-01.png" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-black/50"></div> -->
+
+        <div class="relative text-blue-950 font-secundaria font-bold sombreamento">
+          <h3 class="text-2xl md:text-xl mb-2"><i class="fa fa-snowflake"></i> Alta temporada - Inverno</h3>
+          <p class="text-lg md:text-md mb-2">Junho a Setembro</p>
+          <p class="text-md md:text-sm">
+            Ideal para quem quer ver neve e aproveitar parques como Farellones, Valle Nevado e experiências na Cordilheira.
+          </p>
+        </div>
+      </div>
+
+      <!-- BAIXA TEMPORADA -->
+      <div class="relative rounded-2xl overflow-hidden p-6 bg-fundo-verao border zoom-effect">
+        <!-- <div class="absolute inset-0 bg-black/60"></div>
+        <img src="../assets/images/verao.jpg" class="absolute inset-0 w-full h-full object-cover"> -->
+
+        <div class="relative text-gray-100 sombra-01 font-secundaria font-bold">
+          <h3 class="text-2xl md:text-xl mb-2 "><i class="fa fa-sun"></i> Baixa temporada - Verão</h3>
+          <p class="text-lg md:text-md mb-2">Outubro a Maio</p>
+          <p class="text-md md:text-sm">
+            Perfeito para vinícolas, Cajón del Maipo, city tour e paisagens incríveis sem neve, com clima mais agradável.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  
+  </div>
+</section>
+
+<!-- TÓPICO CORDILHEIRA -->
+<section id="cordilheira" class="relative w-full h-[90px] md:h-[160px] overflow-hidden fade-section">
+
+  <!-- IMAGEM DE FUNDO -->
+  <img 
+    src="../assets/images/cordilheira.png" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- OVERLAY ESCURO -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="relative h-full flex items-center justify-center">
+
+    <h2 class="text-white text-3xl md:text-5xl font-secundaria tracking-wide">
+      CORDILHEIRA
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- PASSEIOS -->
+<!-- ANDES PANORÂMICO -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/andes.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Andes Panorâmico
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio perfeito para quem quer conhecer a neve de forma leve e econômica, com paradas nos principais pontos da Cordilheira e paisagens incríveis sem precisar entrar nos parques.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 247,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/6Z0cHV4nRfc?si=V79RhyyfO7ZKdmc3" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 17:00</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café/Rental</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Curva 32/Aclimatação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Valle Nevado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Farelones</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FARELLONES -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/farellones-02.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Parque de Farellones
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Diversão garantida na neve com atividades para todas as idades, em um parque cheio de atrações e perfeito para quem busca um dia animado na Cordilheira.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 247,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/APoVupKnHCQ?si=dryWL6r_gLAb88u6" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café/Rental</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Parque Farellones</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- PORTILLO E LAGUNA DEL INCA -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/portillo.jpg" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Portillo e Laguna Del Inca
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dos cenários mais impressionantes do Chile, com estrada cheia de curvas famosas, vista para montanhas incríveis e a deslumbrante Laguna del Inca.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg mb-2">
+          <!-- PREÇO -->
+          
+          <div class="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Verão - R$ 277,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/YHE8u_Wwxw0?si=nVkmbk8hvLgQdQCE" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 277,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 257,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/kAEvU1virxU?si=Bx1VVWQGILJqsjbI" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li>
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 17:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café/Rental</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirante Panorâmico</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Salto del Soldado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Los Caracoles</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Laguna del Inca</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- VALLE NEVADO -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/valle-nevado.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Valle Nevado
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dos destinos de neve mais famosos da América do Sul, ideal para quem quer viver a experiência completa na montanha, seja para esquiar, brincar na neve ou simplesmente aproveitar a vista.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 247,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/xUIMG-yvK5c?si=Oh2sVDYmy_R-89rz" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café/Rental</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Estação de Esqui Valle Nevado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- EL COLORADO -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/colorado.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          El Colorado
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dos centros de ski mais tradicionais do Chile, perfeito para quem quer praticar esportes na neve ou aproveitar um dia nas montanhas com estrutura completa.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 247,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/APoVupKnHCQ?si=dryWL6r_gLAb88u6" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café/Rental</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Estação de esqui El Colorado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TERMAS DE COLINA CAJÓN DEL MAIPO -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/termas.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Termas de Colina Cajon Del Maipo
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio completo e exclusivo, com conforto, gastronomia, vinhos e momentos de relaxamento nas termas, tudo em meio à paisagem incrível da Cordilheira
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 2.637,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/APoVupKnHCQ?si=dryWL6r_gLAb88u6" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte 4x4 próprio para neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket das termas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Open vinho, pisco e cerveja</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço churrasco</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Termas de Colinas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Miradores de Colina</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Restaurante para almoço</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Casa de Chocolate</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos. <br><br>
+          Passeio apenas para crianças acima de 12 anos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas. <br><br>
+          Saída nas terças e quintas-feiras, com mínimo de 2 pessoas. Consulte disponibilidade.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- MOTO DE NEVE EM CAJÓN DEL MAIPO -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/moto.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Moto de Neve em Cajon Del Maipo
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma experiência única e cheia de adrenalina, pilotando sua própria moto de neve pela Cordilheira, passando por paisagens incríveis e cenários inesquecíveis.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 2.297,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/Bt46QHoC1n0?si=x44jKZN9Cxeu9Ige" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Moto próprio para neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Seguro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 5 fotos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 2 garrafas de água</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 06:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 1hr na moto em Cajon del Maipo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Cachoeira</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Casa de Chocolate</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.<br><br>
+          OBRIGATÓRIO ter CNH para quem for pilotar.<br><br>
+          Recomendamos ir com a roupa de neve.<br><br>
+          Permitido acima de 14 anos.<br><br>
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal nos primeiros dias da viagem devido às condições climáticas. <br><br>
+          Saída de segunda a sábado. Consulte disponibilidade.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CAJÓN DEL MAIPO, EMBALSE EL YESO e TERMAS DE COLINA  -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/embalse.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Cajon Del Maipo, Embalse El Yeso e Termas de Colina 
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dia completo entre montanhas, paisagens deslumbrantes e águas termais, combinando aventura leve com momentos de relaxamento em meio à natureza.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Verão - R$ 507,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/E7tm2uvDSV8?si=XEoDSrU2iVMhUURJ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket das termas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique com vinho</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Muri del Maipo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Termas de Colina</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirante do Vulcão San José</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Reservatório El Yeso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Casa de chocolate</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal para qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CAJÓN DEL MAIPO e EMBALSE EL YESO  -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/embalse-01.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Cajon Del Maipo e Embalse El Yeso 
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dia completo entre montanhas, paisagens deslumbrantes, combinando aventura leve com momentos de relaxamento em meio à natureza.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Verão - R$ 317,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/E7tm2uvDSV8?si=XEoDSrU2iVMhUURJ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 05:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Muri del Maipo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Reservatório El Yeso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirante do Rio El Yeso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Casa de chocolate</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal para qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- CAJÓN DEL MAIPO e TERMAS DE COLINA  -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/termas-01.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Cajon Del Maipo e Termas de Colina 
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio perfeito para quem quer conhecer a Cordilheira com tranquilidade, passando por cenários incríveis e finalizando com um banho relaxante nas famosas termas.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Verão - R$ 427,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/E7tm2uvDSV8?si=XEoDSrU2iVMhUURJ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket das termas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 06:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 16:00</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Café da manhã</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Termas da colina</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Casa de chocolate</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal para qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TÓPICO SUNSET -->
+<section id="sunset" class="relative w-full h-[90px] md:h-[160px] overflow-hidden fade-section">
+
+  <!-- IMAGEM DE FUNDO -->
+  <img 
+    src="../assets/images/sunset.png" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- OVERLAY ESCURO -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="relative h-full flex items-center justify-center">
+
+    <h2 class="text-white text-3xl md:text-5xl font-secundaria tracking-wide">
+      SUNSETS
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- PASSEIOS -->
+ <!-- FARELLONES SUNSET -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/festa.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Farellones Sunset
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma experiência única na Cordilheira dos Andes, passando por mirantes incríveis, e finalizando com um pôr do sol inesquecível, ao som de DJ e um clima animado nas alturas.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 797,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/rhL13fstCP4?si=Mva88UceCh8UcWYQ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Dj</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Seguro viagem durante o passeio</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Bebidas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+      
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 6 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Rental</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Panorâmico La Parva</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Panorâmico El Colorado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sunset em Farellones</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem. <br><br>
+          Saída as quartas-feiras.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VALLE NEVADO SUNSET -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/valle-01.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Valle Nevado Sunset
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio encantador para contemplar o pôr do sol nas montanhas, com paradas em mirantes incríveis e um picnic especial em meio à Cordilheira dos Andes.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <!-- <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 355,00
+        </div> -->
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-orange-500 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Verão - R$ 287,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/rhL13fstCP4?si=Mva88UceCh8UcWYQ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 14:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 21:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirador de los vientos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Valle Nevado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Farellones</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem. <br><br>
+          Saída de segunda à sábado.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ISLA NEGRA SUNSET VIP -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/isla-vip.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Isla Negra Sunset VIP
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio sofisticado que combina tour na vinícola Undurraga, visita à Isla Negra e finaliza com um sunset exclusivo à beira-mar, com open bar, música e um ambiente incrível.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 807,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+            Inverno - R$ 907,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/rhL13fstCP4?si=Mva88UceCh8UcWYQ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket vinícola</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sunset</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Open bar/food</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço/Jantar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 11:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 20:30</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Tour na Vinícola Undurraga</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Visita à Isla Negra</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sunset Piscina San Alfonso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.<br><br>
+          O cliente tem que se organizar pois não tem parada para almoço.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem. <br><br>
+          Saída às sextas-feiras.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ISLA NEGRA SUNSET -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/isla.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Isla Negra Sunset
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio que combina tour na Viña Undurraga, visita à Isla Negra e finaliza com um sunset exclusivo à beira-mar, música e um ambiente incrível.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 517,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+            Inverno - R$ 627,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/rhL13fstCP4?si=Mva88UceCh8UcWYQ" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket vinícola</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sunset</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Bebidas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 11:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 20:30</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Tour na Vinícola Undurraga</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Visita à Isla Negra</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sunset Piscina San Alfonso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.<br><br>
+          O cliente tem que se organizar pois não tem parada para almoço.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem. <br><br>
+          Saída às sextas-feiras.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+<!-- TÓPICO LITORAL -->
+<section id="litoral" class="relative w-full h-[90px] md:h-[160px] overflow-hidden fade-section">
+
+  <!-- IMAGEM DE FUNDO -->
+  <img 
+    src="../assets/images/litoral-01.png" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- OVERLAY ESCURO -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="relative h-full flex items-center justify-center">
+
+    <h2 class="text-white text-3xl md:text-5xl font-secundaria tracking-wide">
+      LITORAL
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- PASSEIOS -->
+<!-- VIÑA DEL MAR E VALPARAÍSO -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/valparaiso.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Viña Del Mar e Valparaíso
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dia para explorar o melhor do litoral chileno, com suas ruas cheias de arte, cultura e vistas incríveis para o mar, um passeio leve, diferente e cheio de cenários únicos.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 267,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 227,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/uMsvXyVUbOE?si=5ozJljsi6WS23mG0" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 07:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 17:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Loja de vinhos Rio Tinto/Café</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Valparaíso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirante Cerro Cárcel</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Passeio panorâmico</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Passeio Dimalow</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> colinas de Valparaíso</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Plaza Sotomayor</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Viña del Mar</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Orla</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Relógio de Flores</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Praia para fotos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Rocha dos leões-marinhos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Museu Fonck</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ALGARROBO, ISLA NEGRA E VINÍCOLA UNDURRAGA -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/algarrobo-01.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Algarrobo, Isla Negra e Vinícola Undurraga
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dia para explorar o melhor do litoral chileno, com suas ruas cheias de arte, cultura e vistas incríveis para o mar, um passeio leve, diferente e cheio de cenários únicos.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 527,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 517,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/hyHXCSWlE3M?si=fd8yyBVwJO_tUTKd" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket da Vinícola Undurraga</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 07:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 9 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Vinícola Undurraga</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Algarrobo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Fotos na maior piscina do mundo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Almoço</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Isla Negra</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Casa-Museu de Pablo Neruda</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem. <br><br>
+          Saída de quarta a domingo.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TÓPICO VINICOLAS -->
+<section id="vinicolas" class="relative w-full h-[90px] md:h-[160px] overflow-hidden fade-section">
+
+  <!-- IMAGEM DE FUNDO -->
+  <img 
+    src="../assets/images/vinicola.png" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- OVERLAY ESCURO -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="relative h-full flex items-center justify-center">
+
+    <h2 class="text-white text-3xl md:text-5xl font-secundaria tracking-wide">
+      VINÍCOLAS
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- PASSEIOS -->
+<!-- VINÍCOLA UNDURRAGA -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/undurraga-02.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Vinícola Undurraga
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma experiência charmosa e cultural, onde você caminha pelos vinhedos, descobre todo o processo de produção e ainda aproveita degustações que incluem vinhos premium em um ambiente encantador.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 457,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 447,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/8mHAJpfyxRU?si=QU4oS0XqlbNgGPcC" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia da vinícola</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos (3 tipos)</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Taça de vinho da vinícola de cortesia</li>
+
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 07:00/12:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 13:00/18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 5 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Vinhedos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Trincheira</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adega</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Jardim de lazer</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adegas subterrâneas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VINÍCOLA ALYAN -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/alyan.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Vinícola Alyan
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um dos sunsets mais especiais do Chile, com ambiente acolhedor, degustação à vontade e um pôr do sol inesquecível, finalizado com jantar em uma experiência exclusiva.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 697,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 787,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/dScM42CzxkY?si=dTbjpjZMKLWorOqL" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos à vontade</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Lanche na degustação de vinho</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sunset</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Jantar informal</li>
+
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 15:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 21:00</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Bodega</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Loja</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Instalações da vinícola</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Processo de produção</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirador da casa</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos. <br><br>
+          Não permitido entrada de menor de 18 anos! <br><br>
+          Os ingressos são adquiridos após a confirmação da reserva e não permitem troca ou reembolso em caso de cancelamento.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VINÍCOLA CONCHA Y TORO CENTRO DEL VIÑO -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/concha.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Vinícola Concha y Toro - Centro del Viño
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio clássico, conhecendo uma das vinícolas mais famosas do mundo. Entre jardins, adegas e histórias, você vive uma experiência completa com degustações especiais.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 557,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 547,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://www.youtube.com/watch?v=HPLkclcpMVE" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Guia da vinícola</li> -->
+          <li><i class="fa fa-arrow-right fa-xs"></i> 4 taças de vinhos Premium</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Taça de vinho da vinícola de cortesia</li>
+
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 13:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 18:00</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 2 horas</li> -->
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Visita ao Parque Concha y Toro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Exteriores da Casa Don Melchor</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Experiência Sensorial Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adega Subterrânea Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adega de Guarda del Alto</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirante Concha y Toro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VINÍCOLA CONCHA Y TORO TOUR MARQUÊS -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/marques.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Vinícola Concha y Toro - Tour Marquês
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma experiência premium dentro da vinícola mais famosa do Chile, com degustações exclusivas e um tour mais completo e sofisticado.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 647,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 707,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/8mHAJpfyxRU?si=QU4oS0XqlbNgGPcC" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia da vinícola</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 4 taças de vinhos Premium</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Tábua de frios</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 6 taças de vinhos Marques</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Taça de vinho da vinícola de cortesia</li>
+
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 06:30/13:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 13:30/18:30</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 5 horas</li> -->
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Novo Passeio Concha y Toro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Visita ao Parque Concha y Toro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Exteriores da Casa Don Melchor</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Experiência Sensorial do Museu Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adega Subterrânea Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adega de Guarda del Alto</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mirante Concha y Toro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos e frios</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos. <br><br>
+          Não permitido entrada de menor de 18 anos!
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- VINÍCOLA CONCHA Y TORO CASILLERO DEL DIABLO -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/noturno.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Vinícola Concha y Toro - Casillero del Diablo
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Um passeio envolvente que mistura história, mistério e gastronomia, com visita noturna à vinícola, degustação e jantar especial.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 1107,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 1347,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/8mHAJpfyxRU?si=QU4oS0XqlbNgGPcC" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 1 degustação de espumante</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 3 taças de vinhos Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> 2 taças de vinho Reserva Privada ou Reserva Especial</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Jantar 3 tempos + 2 taças de Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Taça de vinho da vinícola de cortesia</li>
+
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Garrafas de vinho</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Comidas e bebidas extras</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Roupas de neve</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket de entrada</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 15:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 22:00</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 5 horas</li> -->
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Visita guiada aos vinhedos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Percurso Noturno Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Visita ao Parque Concha y Toro</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Exteriores da Casa Don Melchor</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Adega Subterrânea Casillero del Diablo</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Restaurant Bodega 1883</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Degustação de vinhos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Jantar 3 tempos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos. <br><br>
+          Não permitido entrada de menor de 14 anos!
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem.<br><br>
+          Saídas de Terça à Sábado.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TÓPICO CIDADE -->
+<section id="cidade" class="relative w-full h-[90px] md:h-[160px] overflow-hidden fade-section">
+
+  <!-- IMAGEM DE FUNDO -->
+  <img 
+    src="../assets/images/cidade.png" 
+    class="absolute inset-0 w-full h-full object-cover"
+  />
+
+  <!-- OVERLAY ESCURO -->
+  <div class="absolute inset-0 bg-black/50"></div>
+
+  <!-- CONTEÚDO -->
+  <div class="relative h-full flex items-center justify-center">
+
+    <h2 class="text-white text-3xl md:text-5xl font-secundaria tracking-wide">
+      CIDADE
+    </h2>
+
+  </div>
+
+</section>
+
+<!-- PASSEIOS -->
+<!-- CITY TOUR -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/city-02.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          City tour santiago
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma forma leve e autêntica de conhecer Santiago, caminhando pelos principais pontos turísticos e vivenciando a cultura local de perto, com direito a um doce momento especial no final.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 187,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 127,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/JmHCxTaKR34?si=k5JV7O90BRiyz2mV" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sorvete Empório la Rosa</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transfer até o ponto início do City Tour</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 09:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 13:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 4 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Palácio La Moneda</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Passeio Bandera</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Rua Nova York</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Rua Paris-Londres</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Palácio da Justiça</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Praça de Armas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Catedral Metropolitana</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Morro Santa Lúcia</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Bairro Lastarria</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Parque Florestal</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Empório la Rosa</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.<br><br>
+          Tour feito caminhando, recomendado para pessoas com boa mobilidade. 
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- HOP ON HOP OFF -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/hop-01.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Hop on Hop Off Ônibus Turístico
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Explore Santiago no seu ritmo, com paradas nos principais pontos da cidade, incluindo o Cerro San Cristóbal e o Sky Costanera. Um passeio prático, completo e cheio de vistas incríveis.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 327,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 337,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/noF2FHC3q_U?si=w__qmbn9TBih_EMT" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket do Ônibus</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket Teleférico</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket Funicular</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Áudio Guia</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transfer até os pontos de parada do ônibus</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 10:00 do Parque Arauco</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 15:30 do Parque Arauco</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 4 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Parque Arauco</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Parque Bicentenário Teleférico</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Funicular</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Plaza de Armas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Palácio da Justiça</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Praça de Armas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Plaza de La Constituición Santa Lucía</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Plaza de la Aviación</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Costanera Center</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Museu Interativo de Las Condes</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Hotel Sheraton</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Patio Bellavista</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Hotel Le Meridien</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Providencia con Ricardo Lyon</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alonso de Córdova con Rosario Norte</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Hotel Sheraton</li> -->
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas de mobilidade.<br><br>
+          Rota finaliza as 18:00, esteja próximo ao local de retorno para evitar atrasos.<br><br>
+          Mapa de paradas 📍 <a 
+            href="https://goo.gl/maps/AiF6v2iZENDvbyq38" 
+            target="_blank" 
+            title="Ver mapa de paradas">
+            <span class="text-amber-500 hover:text-blue-500">Clique Aqui</span>
+          </a>
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- AMOR Y PASTAS PREMIUM -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/pasta.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Experiência Amor y Pastas Premium
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          A versão mais exclusiva da experiência, com benefícios especiais, atendimento diferenciado e uma noite ainda mais completa e memorável.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 827,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 867,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://www.instagram.com/reel/C-oDXy4SWzz/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Jantar de massas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sobremesa e bebidas com e sem álcool</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mesa com até 6 pessoas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Entrada exclusiva sem fila</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Avental personalizado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Experiência na fábrica de pastas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Masterclass digital com todas as receitas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Localização mais próxima ao cenário</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte de Ida e Volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Transfer até os pontos de parada do ônibus</li> -->
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Início às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Final às 22:00</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 4 horas</li> -->
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Factoría Italia - Av Italia 830, Providencia</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas de mobilidade.<br><br>
+          Vagas são limitadas, então o ideal é garantir o quanto antes pra não perder essa experiência!<br><br>
+          Evento acontece no Factoría Italia - Av Italia 830, Providencia.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- AMOR Y PASTAS TRADICIONAL -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/pasta.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Experiência Amor y Pastas Tradicional
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma experiência gastronômica divertida e interativa, onde você prepara sua própria massa enquanto aproveita música, drinks e um jantar completo.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 677,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 677,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://www.instagram.com/reel/C-oDXy4SWzz/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Jantar de massas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Sobremesa e bebidas com e sem álcool</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Mesa com até 12 pessoas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Avental personalizado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Experiência na fábrica de pastas</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Masterclass digital com todas as receitas</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Localização mais próxima ao cenário</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte de Ida e Volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Transfer até os pontos de parada do ônibus</li> -->
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Início às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Final às 22:00</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 4 horas</li> -->
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Factoría Italia - Av Italia 830, Providencia</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas de mobilidade.<br><br>
+          Vagas são limitadas, então o ideal é garantir o quanto antes pra não perder essa experiência!<br><br>
+          Evento acontece no Factoría Italia - Av Italia 830, Providencia.
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer dia da viagem.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- CASSINO MONTICELLO -->
+<section class="bg-[#f5f5f5] bg-fundo py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/cassino.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+        
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Cassino Monticello
+        </h2>
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma noite animada no Casino Monticello, com jogos, bares e ambiente vibrante, perfeito para curtir com conforto e diversão próximo a Santiago.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 277,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 317,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <!-- <a 
+            href="https://youtu.be/JmHCxTaKR34?si=k5JV7O90BRiyz2mV" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a> -->
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Suporte durante o tour</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Piquenique no final do tour</li> -->
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Bilheteria</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 18:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 00:00</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 4 horas</li>
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Cassino monticello</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.<br><br>
+          Valor de entrada: 4.800 pesos chilenos pagos na bilheteria.<br><br>
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem.<br><br>
+          Saídas ás sextas-feiras.<br><br>
+          Consultar disponibilidade.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SAFÁRI RANCAGUA -->
+<section class="bg-[#f5f5f5] bg-fundo-invert py-12">
+  
+  <div class="max-w-7xl mx-auto px-4">
+
+    <!-- CARD PRINCIPAL -->
+    <div class="relative rounded-3xl overflow-hidden mb-6 md:mb-10 fade-section">
+      
+      <!-- IMAGEM -->
+      <img 
+        src="../assets/images/safari.png" 
+        class="w-full h-[300px] md:h-[450px] object-cover"
+      />
+
+      <!-- OVERLAY -->
+      <div class="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 md:p-10 text-white">
+
+      
+
+        <!-- TITULO -->
+        <h2 class="text-2xl md:text-4xl font-principal mb-2 sombra-02">
+          Safári Rancagua 
+        </h2> 
+
+        <!-- DESCRIÇÃO -->
+        <p class="text-sm md:text-base max-w-xl mb-4 font-secundaria sombra-02">
+          Uma experiência única e surpreendente, onde você chega bem perto de animais incríveis, incluindo leões. Um passeio diferente, emocionante e ideal para quem quer algo fora do comum.
+        </p>
+
+        <!-- PREÇO -->
+
+        <!-- PREÇO + BOTÃO -->
+        <div class="bg-orange-500 text-white text-sm md:text-lg px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow">
+          Verão - R$ 457,00
+        </div>
+        <div class="flex items-center justify-between w-full text-sm md:text-lg">
+
+          <!-- PREÇO -->
+          
+          <div class="bg-blue-600/90 text-white px-4 py-2 rounded-xl font-bold font-secundaria box-shadow">
+            Inverno - R$ 537,00
+          </div>
+
+          <!-- BOTÃO YOUTUBE -->
+          <a 
+            href="https://youtu.be/SAjga97iGd0?si=4Eupzl_JKIwBe4lK" 
+            target="_blank"
+            class="ml-4 bg-orange-500/85 hover:bg-orange-500 text-white px-4 py-2 rounded-xl font-bold transition backdrop-blur-sm font-bold font-secundaria box-shadow zoom-effect"
+          >
+            <i class="fa fa-play-circle fa-lg "></i> Ver vídeo
+          </a>
+
+        </div>
+        <!-- <div class="bg-blue-600 text-white px-4 py-2 rounded-xl w-fit mb-2 font-bold font-secundaria box-shadow ">
+          Inverno - R$ 247,00
+        </div> -->
+      </div>
+    </div>
+
+    <!-- GRID INFORMAÇÕES -->
+    <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 font-bold font-secundaria fade-section">
+
+      <!-- INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="text-blue-800 mb-3"><i class="fas fa-check-circle fa-lg"></i> O que está incluso</h3>
+
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Transporte ida e volta</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Guia especializado</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket Geral</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket Tour Felinos</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Ticket Tour Herbívoros</li>
+
+        </ul>
+      </div>
+
+      <!-- NÃO INCLUSO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow font-bold zoom-effect">
+        <h3 class="font-secundaria text-red-600 mb-3"><i class="fas fa-times fa-lg"></i> Não incluso</h3>
+        <ul class="text-sm text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Alimentação</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Gastos pessoais</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Bilheteria</li> -->
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Equipamentos de ski</li> -->
+        </ul>
+      </div>
+
+
+      <!-- HORÁRIO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-clock fa-lg"></i> Horário</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Saída às 08:30</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno às 15:00</li>
+          <!-- <li><i class="fa fa-arrow-right fa-xs"></i> Duração: 4 horas</li> -->
+        </ul>
+        
+      </div>
+
+      <!-- ROTEIRO -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-map-marked-alt fa-lg"></i> Roteiro</h3>
+        <ul class="text-sm font-bold text-gray-800 space-y-1">
+          <li><i class="fa fa-arrow-right fa-xs"></i> Embarque</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Safári</li>
+          <li><i class="fa fa-arrow-right fa-xs"></i> Retorno</li>
+        </ul>
+      </div>
+
+      <!-- PARA QUEM -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-exclamation-triangle fa-lg"></i> Importante</h3>
+        <p class="text-sm text-gray-800">
+          Não recomendado para grávidas e pessoas com problemas cardíacos.<br><br>
+        </p>
+      </div>
+
+      <!-- QUANDO IR -->
+      <div class="bg-white bg-fundo-branco rounded-2xl p-4 md:p-6 shadow zoom-effect">
+        <h3 class="font-bold text-orange-500 mb-3"><i class="fas fa-calendar-alt fa-lg"></i> Melhor período</h3>
+        <p class="text-sm text-gray-800">
+          Ideal em qualquer momento da viagem.<br><br>
+          Saídas de terça a domingo.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Footer Section -->
+<footer class="bg-fundo text-white py-8 font-secundaria">
+  <!-- <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-6 px-6 text-sm overflow-hidden">
+    <div>
+      <div>
+        <img src="../assets/images/logo_certa.png" class="w-32 p-2 rounded-lg" alt="logo" loading="lazy">
+      </div>
+      <p>Sorrir é viver melhor.</p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-2">Quick Links</h4>
+      <ul class="space-y-1">
+        <li><a href="#agendamento" class="hover:text-yellow-500">Agendamento</a></li>
+        <li><a href="#servicos" class="hover:text-yellow-500">Serviços</a></li>
+        <li><a href="#sobre" class="hover:text-yellow-500">Sobre</a></li>
+        <li><a href="#faq" class="hover:text-yellow-500">Perguntas Frequentes</a></li>
+        <li><a href="#localizacao" class="hover:text-yellow-500">Localização</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-2">Contato</h4>
+      <p>Centro - Presidente jucelino</p>
+      <p class="my-2">
+        <a class="hide-on-mobile" href="mailto:martinsjheymis@gmail.com" target="_blank"
+          title="Entre em contato pelo Email">
+          Email: <span class="hover:text-amber-500">clinica.hrodontologia&commat;gmail.com</span>
+        </a>
+      </p>
+      <p>
+        <a href="https://wa.me/55989985912128" target="_blank" title="Entre em contato pelo WhatsApp">
+          Telefone: <span class="hover:text-amber-500">(98) 98591-2128</span>
+        </a>
+      </p>
+    </div>
+    <div>
+      <h4 class="font-semibold mb-2">Horarios</h4>
+      <ul class="space-y-1">
+        <li><span class="font-semibold">Seg - Qui</span> : 9:00am – 6:00pm</li>
+        <li><span class="font-semibold">Sáb</span> : 10:00am – 4:00pm</li>
+        <li><span class="font-semibold">Dom</span> : Fechado</li>
+      </ul>
+    </div>
+  </div> -->
+  <img src="../assets/images/logoLC.png" class="w-48 pb-2 rounded-lg mx-auto" alt="logo" loading="lazy">
+  <div class="text-center text-xs text-gray-300 leading-relaxed">
+    &copy; 2026 LC Turismo. Todos os direitos reservados.<br>
+    <a target="_blank" href="https://www.linkedin.com/in/jheymisson-martins-b0a0742a4/">
+      Desenvolvido por <span class="text-amber-500 hover:text-blue-500">Jheymis Martins</span></a>
+  </div>
+</footer>
+
+<!-- Back to Top Button -->
+<button id="backToTop"
+  class="flex fixed bottom-6 right-6 bg-orange-500 hover:bg-orange-400 text-white pr-4 pl-2 py-2 rounded-full shadow-lg opacity-0 pointer-events-none transition-all duration-500">
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+    <path d="M12 4l-8 8h6v8h4v-8h6z" />
+  </svg> Início
+</button>

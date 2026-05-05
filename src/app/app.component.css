@@ -1,0 +1,185 @@
+.azul{
+    color: rgb(255, 255, 255);
+}
+
+/* REMOVE no desktop */
+@media (min-width: 768px) {
+  .azul {
+    color: white;
+  }
+}
+
+
+html, body {
+  overflow-x: hidden;
+}
+/* section {
+    scroll-behavior: smooth;
+} */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+ header nav a {
+    transition: color 0.3s;
+}
+/* header nav a:hover {
+    color: #78350F;
+} */
+
+.bg-image {
+    background-image: linear-gradient(rgba(0, 19, 61, 0.904), rgba(3, 34, 100, 0.904)), url('../assets/images/marrom-01.jpeg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+}
+
+/* .bg-image-01 {
+    background-image: linear-gradient(rgba(126, 126, 126, 0.7), rgba(126, 126, 126, 0.7)), url('../assets/images/marrom-01.jpeg');
+    background-size: cover;
+    background-position: top;
+    background-attachment: fixed;
+} */
+
+/* clea */
+
+/* .bg-procedimento {
+    background-image: linear-gradient(rgba(126, 126, 126, 0.7), rgba(126, 126, 126, 0.7)), url('../assets/images/procedimento.jpg');
+    background-size: cover;
+    background-position: right;
+    background-attachment: fixed;
+} */
+
+.bg-fundo{
+    background-image: url('../assets/images/fundo-azul.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.bg-fundo-invert{
+    background-image: url('../assets/images/fundo-invert.png');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.bg-fundo-branco{
+    background-image: url('../assets/images/textura.jpeg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.bg-fundo-verao{
+    background-image: url('../assets/images/verao.jpeg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+.bg-fundo-inverno{
+    background-image: url('../assets/images/inverno.jpeg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+/* --------------------------------------------- FONTE DE TEXTO -------------------------------------------------------- */
+@font-face {
+    font-family: montserrat;
+    src: url(../assets/fonts/Montserrat-SemiBold.ttf) format('truetype');
+}
+  
+.font-principal{
+    font-family: montserrat;
+}
+
+@font-face {
+    font-family: montserrat-01;
+    src: url(../assets/fonts/Montserrat-Regular.ttf) format('truetype');
+}
+  
+.font-secundaria{
+    font-family: montserrat-01;
+}
+
+.sombreamento{
+    text-shadow: 1px 1px 10px #ffffff;
+}
+
+.sombra{
+    text-shadow: 2px 2px 20px #000000;
+}
+
+/* REMOVE no desktop */
+@media (min-width: 768px) {
+  .sombra {
+    text-shadow: none;
+  }
+}
+
+.sombra-01{
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.sombra-02{
+    text-shadow: 2px 2px 20px #000000;
+}
+
+
+/* --------------------------------------------- PRELOUDER -------------------------------------------------------- */
+.marrom{
+    color: #ca9e67;
+}
+.fundo{
+    background: #F5E0B8;
+}
+  /* --------------------------------------------- PRELOUDER -------------------------------------------------------- */
+
+.bg-image {
+    background-size: cover;
+    background-position: center;
+}
+.rounded-shadow {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+.section-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+.subtext {
+    font-size: 0.875rem;
+    color: #c0c0c0;
+}
+
+.zoom-effect {
+    transform: perspective(700px) translateZ(0);
+    transition: transform 0.5s ease;
+}
+
+.zoom-effect:hover {
+    transform: perspective(700px) translateZ(30px);
+}
+
+.material-effect {
+    transform: perspective(600px) translateZ(0);
+    transition: transform 0.5s ease;
+  }
+
+.material-effect:hover {
+    transform: perspective(600px) translateZ(15px);
+}
+
+.bloco{
+    transform: translateY(0); /* Estado inicial */
+    background-color: white; /* Equivalente a bg-white */
+    border: 1px solid #f3f4f6; /* Equivalente a border border-gray-100 */
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06); Equivalente a shadow */
+  }
+
+  .bloco:hover{
+    /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); Equivalente a hover:shadow-lg */
+    transform: translateY(-1px); /* Equivalente a hover:-translate-y-1 */
+  }
