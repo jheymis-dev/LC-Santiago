@@ -1,17 +1,65 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <!-- Meta charset para garantir a codificação correta de caracteres -->
+
+  <!-- Charset -->
   <meta charset="utf-8">
 
-  <!-- Meta viewport para garantir que o site seja responsivo (se ajuste em dispositivos móveis) -->
+  <!-- Responsividade -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Título da página (aparece na aba do navegador e nos resultados de busca) -->
-  <!-- <title>Dra. Hanna Rocha — Sorrir é Viver Melhor</title> -->
-  <title>LC Santiago</title>
+  <!-- SEO -->
+  <title>LC Santiago | Experiências Inesquecíveis no Chile</title>
 
-  <!-- PRELOAD DA HERO -->
+  <meta 
+    name="description" 
+    content="Viva experiências inesquecíveis no Chile com passeios exclusivos, neve, vinícolas, litoral e aventuras em Santiago."
+  />
+
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+
+  <meta 
+    property="og:title" 
+    content="LC Santiago | Turismo e Experiências no Chile"
+  />
+
+  <meta 
+    property="og:description" 
+    content="Descubra os melhores passeios no Chile com neve, vinícolas, montanhas e experiências inesquecíveis."
+  />
+
+  <meta 
+    property="og:image" 
+    content="https://lc-santiago.vercel.app/assets/images/santiago.webp"
+  />
+
+  <meta 
+    property="og:url" 
+    content="https://lc-santiago.vercel.app/"
+  />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta 
+    name="twitter:title" 
+    content="LC Santiago | Turismo no Chile"
+  />
+
+  <meta 
+    name="twitter:description" 
+    content="Passeios exclusivos no Chile com neve, vinícolas e experiências incríveis em Santiago."
+  />
+
+  <meta 
+    name="twitter:image" 
+    content="https://lc-santiago.vercel.app/assets/images/santiago.webp"
+  />
+
+  <!-- PRELOAD HERO -->
   <link 
     rel="preload" 
     as="image" 
@@ -26,45 +74,20 @@
     media="(max-width: 767px)"
   />
 
-  <!-- Meta descrição (exibida nos resultados de busca, deve ser clara e resumir o conteúdo da página) -->
-  <meta name="description" c  content="Viva experiências inesquecíveis no Chile com passeios exclusivos, neve, vinícolas, litoral e aventuras em Santiago. Atendimento especializado e roteiros personalizados." />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/aviao-01.png">
 
-  <!-- Meta tags para redes sociais (Open Graph - Facebook, Twitter) -->
-  <!-- <meta property="og:title" content="Clínica HROdontologia - Dra. Hanna Rocha" />
-  <meta property="og:description" content="Especialista em odontologia estética e harmonização facial em Presidente Jucelino" />
-
-  <meta property="og:image" content="https://clinicahrodontologia.com.br/assets/images/IMG_20250411_141740.jpg" />
-  <meta property="og:url" content="https://clinicahrodontologia.com.br" />
-
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Clínica HROdontologia - Dra. Hanna Rocha" />
-  <meta name="twitter:description" content="Odontologia estética e harmonização Presidente Jucelino" />
-  <meta name="twitter:image" content="https://clinicahrodontologia.com.br/assets/images/IMG_20250411_141740.jpg" /> -->
-
-  <!-- Meta tag robots (indica para os motores de busca o que deve ser indexado) -->
-  <meta name="robots" content="index, follow" />
-
-  <!-- Favicon (ícone da aba do navegador) -->
-  <link rel="icon" href="../assets/images/aviao-01.png">
+  <!-- Base Angular -->
   <base href="/">
-  
+
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
-  integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <!-- <link rel="icon" type="image/x-icon" href="dente.png"> -->
+  <link 
+    rel="stylesheet" 
+    href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+    integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+    crossorigin="anonymous"
+  >
 
-  <!-- Script de analytics (para monitoramento de tráfego) - Exemplo com Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script> -->
-
-  <!-- Tag para informar o tipo de conteúdo que será usado (ideal para PWA, se for o caso) -->
-  <!-- <link rel="manifest" href="/manifest.json" /> -->
 </head>
 
 <body class="bg-gray-100 text-gray-900">
